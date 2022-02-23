@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Form.css';
 import Proptypes from 'prop-types';
 
 class Form extends Component {
