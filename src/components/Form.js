@@ -28,7 +28,7 @@ class Form extends Component {
           <br />
           <input
             type="text"
-            name="nomeCard"
+            name="cardName"
             data-testid="name-input"
             value={ cardName }
             onChange={ onInputChange }
@@ -41,7 +41,7 @@ class Form extends Component {
           Descrição
           <br />
           <textarea
-            name="textDescrition"
+            name="cardDescription"
             data-testid="description-input"
             value={ cardDescription }
             onChange={ onInputChange }
@@ -54,7 +54,7 @@ class Form extends Component {
           Attr01
           <input
             type="number"
-            name="firstAttribute"
+            name="cardAttr1"
             data-testid="attr1-input"
             value={ cardAttr1 }
             onChange={ onInputChange }
@@ -67,7 +67,7 @@ class Form extends Component {
           Attr02
           <input
             type="number"
-            name="secondAttribute"
+            name="cardAttr2"
             data-testid="attr2-input"
             value={ cardAttr2 }
             onChange={ onInputChange }
@@ -80,7 +80,7 @@ class Form extends Component {
           Attr03
           <input
             type="number"
-            name="thirdAttribute"
+            name="cardAttr3"
             data-testid="attr3-input"
             value={ cardAttr3 }
             onChange={ onInputChange }
@@ -93,7 +93,7 @@ class Form extends Component {
           Imagem
           <input
             type="text"
-            name="imageCard"
+            name="cardImage"
             data-testid="image-input"
             value={ cardImage }
             onChange={ onInputChange }
@@ -106,7 +106,7 @@ class Form extends Component {
           Raridade
           <br />
           <select
-            name="rarityCard"
+            name="cardRare"
             data-testid="rare-input"
             value={ cardRare }
             onChange={ onInputChange }
@@ -123,7 +123,7 @@ class Form extends Component {
           Super Trybe Trunfo
           <input
             type="checkbox"
-            name="superTrunfo"
+            name="cardTrunfo"
             data-testid="trunfo-input"
             checked={ cardTrunfo }
             onChange={ onInputChange }
