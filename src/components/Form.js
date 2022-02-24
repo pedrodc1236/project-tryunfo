@@ -45,6 +45,7 @@ class Form extends Component {
             data-testid="description-input"
             value={ cardDescription }
             onChange={ onInputChange }
+            maxLength="50"
           />
         </label>
 
@@ -58,6 +59,7 @@ class Form extends Component {
             data-testid="attr1-input"
             value={ cardAttr1 }
             onChange={ onInputChange }
+            placeholder="min = 0 / max = 90"
           />
         </label>
 
@@ -71,6 +73,7 @@ class Form extends Component {
             data-testid="attr2-input"
             value={ cardAttr2 }
             onChange={ onInputChange }
+            placeholder="min = 0 / max = 90"
           />
         </label>
 
@@ -84,6 +87,7 @@ class Form extends Component {
             data-testid="attr3-input"
             value={ cardAttr3 }
             onChange={ onInputChange }
+            placeholder="min = 0 / max = 90"
           />
         </label>
 

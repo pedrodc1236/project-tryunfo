@@ -1,3 +1,17 @@
+:root {
+  --verde-escuro: rgb(3, 107, 82);
+  --verde-claro: rgb(47, 193, 140);
+  --roxo-escuro: rgb(65, 25, 127);
+  --roxo-claro: rgb(137, 88, 163);
+  --azul-claro: rgb(0, 213, 226);
+  --azul-escuro: rgb(0, 109, 251);
+  --cinza-claro: rgb(225, 229, 235);
+  --cinza1: rgb(62, 66, 75);
+  --cinza2: rgb(40, 42, 47);
+  --cinza3: rgb(30, 31, 36);
+  --cinza4: rgb(26, 27, 28);
+  }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,12 +26,35 @@ code {
     monospace;
 }
 
+header h1 {
+  color: var(--cinza1);
+  padding-left: 120px;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--cinza1);
+  height: 850px;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  max-width: 550px;
-  border: 2px solid black;
-  padding-left: 30px;
+  justify-content: space-around;
+  max-width: 600px;
+  max-height: 600px;
+  margin-top: 70px;
+  padding: 25px 50px 50px 50px;
+  border: 10px solid var(--cinza4);
+  border-radius: 20px;
+  background-color: var(--cinza-claro);
+}
+
+textarea {
+  resize: none;
+  width: 80%;
+  height: 30px;
 }
 
 form button {
@@ -30,6 +67,31 @@ form button {
 form button:disabled {
   background-color: gainsboro;
   color: black;
+}
+
+.section-card {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.section-card, h2 {
+  color: var(--cinza-claro);
+}
+
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  background-color: var(--cinza-claro);
+  color: var(--cinza4);
+  align-content: space-around;
+  border: 5px solid var(--cinza4);
+  border-radius: 10px;
+}
+
+.textarea-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
 }
 
 .ul-card {

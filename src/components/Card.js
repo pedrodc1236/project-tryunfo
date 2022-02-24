@@ -14,30 +14,36 @@ class Card extends React.Component {
       cardTrunfo,
     } = this.props;
     return (
-      <div>
-        <h2 data-testid="name-card">{cardName}</h2>
-        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
-        <p data-testid="description-card">
-          { cardDescription }
-        </p>
-        <ul className="ul-card">
-          <li data-testid="attr1-card">
-            { cardAttr1 }
-          </li>
-          <li data-testid="attr2-card">
-            { cardAttr2 }
-          </li>
-          <li data-testid="attr3-card">
-            { cardAttr3 }
-          </li>
-        </ul>
-        <p data-testid="rare-card">
-          <b>{ cardRare }</b>
-        </p>
-        {
-          cardTrunfo && <h3 data-testid="trunfo-card">Super Trunfo</h3>
-        }
-      </div>
+      <section className="section-card">
+        <h2>Pré-Vizualização</h2>
+        <div className="card">
+          <h3 data-testid="name-card">{ cardName }</h3>
+          <img data-testid="image-card" src={ cardImage } alt={ cardName } />
+          <p
+            className="textarea-card"
+            data-testid="description-card"
+          >
+            { cardDescription }
+          </p>
+          <ul className="ul-card">
+            <li data-testid="attr1-card">
+              { cardAttr1 }
+            </li>
+            <li data-testid="attr2-card">
+              { cardAttr2 }
+            </li>
+            <li data-testid="attr3-card">
+              { cardAttr3 }
+            </li>
+          </ul>
+          <p data-testid="rare-card">
+            <b>{ cardRare }</b>
+          </p>
+          {
+            cardTrunfo && <h3 data-testid="trunfo-card">Super Trunfo</h3>
+          }
+        </div>
+      </section>
     );
   }
 }
