@@ -8,39 +8,62 @@ class App extends React.Component {
     super();
 
     this.state = {
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
-      cardImage: '',
-      cardRare: '',
-      cardTrunfo: false,
-      hasTrunfo: false,
+      form: {
+        cardName: '',
+        cardDescription: '',
+        cardAttr1: 0,
+        cardAttr2: 0,
+        cardAttr3: 0,
+        cardImage: '',
+        cardRare: '',
+        cardTrunfo: false,
+        hasTrunfo: false,
+      },
+      deck: [],
     };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.isSaveButtonDisabled = this.isSaveButtonDisabled.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+  }
+
+  onSaveButtonClick(event) {
+    event.preventDefault();
+    this.setState((prevState) => ({
+      deck: [...prevState.deck, prevState.form],
+      form: {
+        cardName: '',
+        cardDescription: '',
+        cardImage: '',
+        cardAttr1: 0,
+        cardAttr2: 0,
+        cardAttr3: 0,
+        cardRare: 'normal',
+      },
+    }));
   }
 
   onInputChange({ target }) {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
-    this.setState({
-      [name]: value,
-    });
+    this.setState((prevState) => ({
+      deck: [...prevState.deck],
+      form: { ...prevState.form, [name]: value },
+    }));
   }
 
   isSaveButtonDisabled() {
     const {
-      cardName,
-      cardDescription,
-      cardImage,
-      cardRare,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
+      form: {
+        cardName,
+        cardDescription,
+        cardImage,
+        cardRare,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+      },
     } = this.state;
 
     const numberMax = 210;
@@ -66,15 +89,17 @@ class App extends React.Component {
 
   render() {
     const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-      hasTrunfo,
+      form: {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+        cardRare,
+        cardTrunfo,
+        hasTrunfo,
+      },
     } = this.state;
     return (
       <>
@@ -85,6 +110,7 @@ class App extends React.Component {
           <Form
             onInputChange={ this.onInputChange }
             isSaveButtonDisabled={ this.isSaveButtonDisabled() }
+            onSaveButtonClick={ this.onSaveButtonClick }
             cardName={ cardName }
             cardDescription={ cardDescription }
             cardImage={ cardImage }
