@@ -45,7 +45,6 @@ class Form extends Component {
             data-testid="description-input"
             value={ cardDescription }
             onChange={ onInputChange }
-            maxLength="50"
           />
         </label>
 

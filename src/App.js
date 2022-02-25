@@ -132,6 +132,24 @@ class App extends React.Component {
             cardTrunfo={ cardTrunfo }
           />
         </main>
+
+        <section>
+          <h3>Deck Completo</h3>
+          {deck.map((card, index) => (
+            <Card
+              key={ index }
+              cardName={ card.cardName }
+              cardDescription={ card.cardDescription }
+              cardImage={ card.cardImage }
+              cardAttr1={ card.cardAttr1 }
+              cardAttr2={ card.cardAttr2 }
+              cardAttr3={ card.cardAttr3 }
+              cardRare={ card.cardRare }
+              cardTrunfo={ card.cardTrunfo }
+            />
+          ))}
+
+        </section>
       </>
     );
   }
