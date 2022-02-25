@@ -125,13 +125,18 @@ class Form extends Component {
           htmlFor="superTrunfo"
         >
           Super Trybe Trunfo
-          <input
-            type="checkbox"
-            name="cardTrunfo"
-            data-testid="trunfo-input"
-            checked={ cardTrunfo }
-            onChange={ onInputChange }
-          />
+          { hasTrunfo ? (
+            <p>Você já tem um Super Trunfo em seu baralho</p>
+          ) : (
+            <input
+              type="checkbox"
+              name="cardTrunfo"
+              data-testid="trunfo-input"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+            />
+          )}
+
         </label>
 
         <button

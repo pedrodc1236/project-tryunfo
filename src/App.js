@@ -98,8 +98,8 @@ class App extends React.Component {
         cardImage,
         cardRare,
         cardTrunfo,
-        hasTrunfo,
       },
+      deck,
     } = this.state;
     return (
       <>
@@ -108,6 +108,8 @@ class App extends React.Component {
         </header>
         <main>
           <Form
+            PedindoValorParaOFilho={ this.passaInformacaoAoPai }
+            hasTrunfo={ deck.some((card) => card.cardTrunfo) }
             onInputChange={ this.onInputChange }
             isSaveButtonDisabled={ this.isSaveButtonDisabled() }
             onSaveButtonClick={ this.onSaveButtonClick }
