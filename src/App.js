@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import NewCards from './components/NewCards';
 
 class App extends React.Component {
   constructor() {
@@ -24,6 +25,7 @@ class App extends React.Component {
     this.onInputChange = this.onInputChange.bind(this);
     this.isSaveButtonDisabled = this.isSaveButtonDisabled.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.btnRemove = this.btnRemove.bind(this);
   }
 
   onSaveButtonClick(event) {
@@ -86,6 +88,12 @@ class App extends React.Component {
     return true;
   }
 
+  btnRemove(valueCardName) {
+    this.setState((prevState) => ({
+      deck: prevState.deck.filter((card) => card.cardName !== valueCardName),
+    }));
+  }
+
   render() {
     const {
       form: {
@@ -136,7 +144,7 @@ class App extends React.Component {
         <section>
           <h3>Deck Completo</h3>
           {deck.map((card, index) => (
-            <Card
+            <NewCards
               key={ index }
               cardName={ card.cardName }
               cardDescription={ card.cardDescription }
@@ -146,6 +154,7 @@ class App extends React.Component {
               cardAttr3={ card.cardAttr3 }
               cardRare={ card.cardRare }
               cardTrunfo={ card.cardTrunfo }
+              cardRemove={ this.btnRemove }
             />
           ))}
 
