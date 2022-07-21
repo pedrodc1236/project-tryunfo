@@ -1,0 +1,15 @@
+input, select {
+    width: 100%;
+    border-radius: 5px;
+    height: 25px;
+    background-color: white;
+}
+
+.trunfo-content {
+    display: flex;
+    align-items: center;
+}
+
+.trunfo-content input{
+    width: 10%;
+}

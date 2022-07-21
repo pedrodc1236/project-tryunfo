@@ -141,8 +141,8 @@ class App extends React.Component {
           />
         </main>
 
-        <section>
-          <h3>Deck Completo</h3>
+        <section className="deck-content">
+          <h3 className="deck">Deck Completo</h3>
           {deck.map((card, index) => (
             <NewCards
               key={ index }

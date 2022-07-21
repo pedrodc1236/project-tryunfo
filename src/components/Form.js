@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
+import './Form.css';
 
 class Form extends Component {
   render() {
@@ -22,11 +23,12 @@ class Form extends Component {
         <h1>Adicionar nova carta</h1>
 
         <label
-          htmlFor="nomeCard"
+          htmlFor="name-input"
         >
           Nome
           <br />
           <input
+            id="name-input"
             type="text"
             name="cardName"
             data-testid="name-input"
@@ -36,11 +38,12 @@ class Form extends Component {
         </label>
 
         <label
-          htmlFor="textDescrition"
+          htmlFor="description-input"
         >
           Descrição
           <br />
           <textarea
+            id="description-input"
             name="cardDescription"
             data-testid="description-input"
             value={ cardDescription }
@@ -49,10 +52,11 @@ class Form extends Component {
         </label>
 
         <label
-          htmlFor="firstAtribute"
+          htmlFor="attr1-input"
         >
           Attr01
           <input
+            id="attr1-input"
             type="number"
             name="cardAttr1"
             data-testid="attr1-input"
@@ -63,10 +67,11 @@ class Form extends Component {
         </label>
 
         <label
-          htmlFor="secondAttribute"
+          htmlFor="attr2-input"
         >
           Attr02
           <input
+            id="attr2-input"
             type="number"
             name="cardAttr2"
             data-testid="attr2-input"
@@ -77,10 +82,11 @@ class Form extends Component {
         </label>
 
         <label
-          htmlFor="thirdAttribute"
+          htmlFor="attr3-input"
         >
           Attr03
           <input
+            id="attr3-input"
             type="number"
             name="cardAttr3"
             data-testid="attr3-input"
@@ -91,10 +97,11 @@ class Form extends Component {
         </label>
 
         <label
-          htmlFor="imageCard"
+          htmlFor="image-input"
         >
           Imagem
           <input
+            id="image-input"
             type="text"
             name="cardImage"
             data-testid="image-input"
@@ -104,11 +111,12 @@ class Form extends Component {
         </label>
 
         <label
-          htmlFor="rarityCard"
+          htmlFor="rare-input"
         >
           Raridade
           <br />
           <select
+            id="rare-input"
             name="cardRare"
             data-testid="rare-input"
             value={ cardRare }
@@ -120,23 +128,29 @@ class Form extends Component {
           </select>
         </label>
 
-        <label
-          htmlFor="superTrunfo"
-        >
-          Super Trybe Trunfo
-          { hasTrunfo ? (
-            <p>Você já tem um Super Trunfo em seu baralho</p>
-          ) : (
-            <input
-              type="checkbox"
-              name="cardTrunfo"
-              data-testid="trunfo-input"
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-            />
-          )}
+        <div>
+          <label
+            className="trunfo-content"
+            htmlFor="trunfo-input"
+          >
+            { hasTrunfo ? (
+              <p>Você já tem um Super Trunfo em seu baralho</p>
+            ) : (
+              <>
+                <input
+                  id="trunfo-input"
+                  type="checkbox"
+                  name="cardTrunfo"
+                  data-testid="trunfo-input"
+                  checked={ cardTrunfo }
+                  onChange={ onInputChange }
+                />
+                Super Trybe Trunfo
+              </>
+            )}
 
-        </label>
+          </label>
+        </div>
 
         <button
           type="submit"

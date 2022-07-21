@@ -36,6 +36,7 @@ main {
   justify-content: space-around;
   background-color: var(--cinza1);
   height: 850px;
+  background-color: var(--verde-escuro);
 }
 
 form {
@@ -49,6 +50,7 @@ form {
   border: 10px solid var(--cinza4);
   border-radius: 20px;
   background-color: var(--cinza-claro);
+  font-weight: bolder;
 }
 
 textarea {
@@ -69,31 +71,15 @@ form button:disabled {
   color: black;
 }
 
-.section-card {
+.deck-content {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  justify-content: space-evenly;
 }
 
-.section-card, h2 {
-  color: var(--cinza-claro);
-}
-
-.card {
+.deck-content .deck {
   display: flex;
-  flex-flow: column wrap;
-  background-color: var(--cinza-claro);
-  color: var(--cinza4);
-  align-content: space-around;
-  border: 5px solid var(--cinza4);
-  border-radius: 10px;
-}
-
-.textarea-card {
-  display: flex;
-  flex-wrap: wrap;
-  align-self: center;
-}
-
-.ul-card {
-  list-style-type: none;
+  justify-content: center;
+  flex-basis: 100%;
 }
