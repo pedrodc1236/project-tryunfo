@@ -39,7 +39,7 @@ Após cada um dos passos, haverá um exemplo do comando a ser digitado para faze
   npm install
 ```
 
-4. Por último, rode o comando **npm start** e acesse o projeto via browser, no caminho `http://localhost:3000/project-solar-system`.
+4. Por último, rode o comando **npm start** e acesse o projeto via browser, no caminho `http://localhost:3000/project-tryunfo`.
 
 ```javascript
   npm start
